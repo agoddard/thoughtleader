@@ -1,7 +1,7 @@
-# encoding: UTF-8
+# encoding: utf-8
 require 'sinatra'
 
-denied = ['Anthony Goddard', 'Kristen Lans']
+denied = ['Anthony Goddard', 'Kristen Lans', 'dat Board of Regents']
 
 get '/' do
   name = params[:name]
@@ -21,11 +21,10 @@ get '/' do
     color = "#F00"
     title = "WARNING WARNING WARNING WARNING WARNING WARNING"
   end
-  
+
   if name == "Jason Dixon"
-    message = "#{name} is a Certified Thought Leader™ <br /><br />...on the Chipotle menu and Archer seasons 1-2"  
+    message = "#{name} is a Certified Thought Leader™ <br /><br />...on the Chipotle menu and Archer seasons 1-2"
   end
-  
+
   erb :leader, :locals => {:message => message, :color => color, :title => title}
 end
-
